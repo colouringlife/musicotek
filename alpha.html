@@ -36,6 +36,26 @@
         tr:hover {
             background-color: #a5d7a7;
         }
+
+        @media (min-width:992px) {
+            .desktop-only {
+                display: block !important;
+            }
+
+            .mobile-only {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .mobile-only {
+                display: block !important;
+            }
+
+            .desktop-only {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -48,6 +68,8 @@
     <h1 style="font-family: cursive; border: 2px dotted #4caf50;"><br>Liste des musiques par ordre
         alphanumérique<br><br>
     </h1>
+    <p class="desktop-only">Paragraphe visible sur desktop</p>
+    <p class="mobile-only">Paragraphe visible sur mobile</p>
     <br>
     <div id="musiqueEnN">
         <a href="#musiqueEnNum">#</a> | <a href="#musiqueEnA">A</a> | <a href="#musiqueEnB">B</a> | <a

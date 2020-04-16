@@ -39,22 +39,23 @@
     </style>
     <script type="text/javascript">
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            document.getElementById('desktopScreen') == 'none' ? '' : 'none';
-            document.getElementById('mobileScreen') == 'none' ? '' : 'none';
+            document.getElementById("desktopScreen").className = "hide1";
+        } else {
+            document.getElementById("mobileScreen").className = "hide2";
         }
     </script>
 </head>
 
 <body>
-    2
-    <div id="desktopScreen">
+    3
+    <div class="hide1" id="desktopScreen">
         <p>
             Desktop
         </p>
     </div>
 
 
-    <div id="mobileScreen" style="display:none;">
+    <div class="hide2" id="mobileScreen" style="display:none;">
         <p>
             Android
         </p>

@@ -44,17 +44,50 @@
         .mobile-only {
             display: block !important;
         }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <script>
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            document.getElementById("screenSize").className = "mobile-only";
-        } else {
-            document.getElementById("screenSize").className = "desktop-only"
+        let d1 = document.getElementById("d1");
+        let d2 = document.getElementById("d2");
+        let p1 = document.getElementById("p1");
+        let l1 = document.getElementById("l1");
+
+        d1.addEventListener("mouseover", () => {
+            p1.style.display = "block";
+        });
+        d1.addEventListener("mouseout", () => {
+            p1.style.display = "none";
+        });
+
+        d2.onmouseover = aff;
+
+        function aff() {
+            l1.style.display = "block";
+        }
+        d2.onmouseout = cac;
+
+        function cac() {
+            l1.style.display = "none";
         }
     </script>
+    <br><br>
+    <div id="d1">
+        <p>Ce texte appartient au premier div de ma page</p>
+        <p id="p1" class="hide">Ce deuxième paragraphe également</p>
+    </div>
+    <div id="d2">
+        <p>Il existe deux façons de cacher un élément <span>comme un div</span> en CSS :</p>
+        <ul id="l1" class="hide">
+            <li>Utiliser visibility: hidden</li>
+            <li>Utiliser display: none</li>
+        </ul>
+    </div>
     <br><br>
     <img src="https://images2.imgbox.com/44/f3/B6DONWzu_o.png" width="175px"
         style="border: 2px solid grey; border-radius: 15%;">

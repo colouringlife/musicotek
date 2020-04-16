@@ -36,173 +36,36 @@
         tr:hover {
             background-color: #a5d7a7;
         }
-
-        .desktop-only {
-            display: block !important;
-        }
-
-        .mobile-only {
-            display: block !important;
-        }
-
-        .hide {
-            display: none;
-        }
     </style>
+    <script type="text/javascript">
+        function switchDisplay() {
+            var defaut = document.getElementById('desktopScreen');
+            var autre = document.getElementById('mobileScreen');
+
+            function screenSize() {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    defaut.style.display = (defaut.style.display == 'none' ? '' : 'none');
+                    autre.style.display = (autre.style.display == 'none' ? '' : 'none');
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <script>
-        let d1 = document.getElementById("d1");
-        let d2 = document.getElementById("d2");
-        let p1 = document.getElementById("p1");
-        let l1 = document.getElementById("l1");
 
-        d1.addEventListener("mouseover", () => {
-            p1.style.display = "block";
-        });
-        d1.addEventListener("mouseout", () => {
-            p1.style.display = "none";
-        });
+    <div id="desktopScreen">
+        <p>
+            Desktop
+        </p>
+    </div>
 
-        d2.onmouseover = aff;
 
-        function aff() {
-            l1.style.display = "block";
-        }
-        d2.onmouseout = cac;
-
-        function cac() {
-            l1.style.display = "none";
-        }
-    </script>
-    <br><br>
-    <div id="d1">
-        <p>Ce texte appartient au premier div de ma page</p>
-        <p id="p1" class="hide">Ce deuxième paragraphe également</p>
+    <div id="mobileScreen" style="display:none;">
+        <p>
+            Android
+        </p>
     </div>
-    <div id="d2">
-        <p>Il existe deux façons de cacher un élément <span>comme un div</span> en CSS :</p>
-        <ul id="l1" class="hide">
-            <li>Utiliser visibility: hidden</li>
-            <li>Utiliser display: none</li>
-        </ul>
-    </div>
-    <br><br>
-    <img src="https://images2.imgbox.com/44/f3/B6DONWzu_o.png" width="175px"
-        style="border: 2px solid grey; border-radius: 15%;">
-    <br><br>
-    <br><br>
-    <h1 style="font-family: cursive; border: 2px dotted #4caf50;"><br>Liste des musiques par ordre
-        alphanumérique<br><br>
-    </h1>
-    <p class="desktop-only" id="screenSize">Paragraphe visible sur desktop</p>
-    <p class="mobile-only" id="screenSize">Paragraphe visible sur mobile</p>
-    <br>
-    <div id="musiqueEnN">
-        <a href="#musiqueEnNum">#</a> | <a href="#musiqueEnA">A</a> | <a href="#musiqueEnB">B</a> | <a
-            href="#musiqueEnC">C</a>
-        | <a href="#musiqueEnD">D</a> | <a href="#musiqueEnE">E</a> | <a href="#musiqueEnF">F</a> | <a
-            href="#musiqueEnG">G</a>
-        | <a href="#musiqueEnH">H</a> | <a href="#musiqueEnI">I</a> | <a href="#musiqueEnJ">J</a> | <a
-            href="#musiqueEnK">K</a>
-        | <a href="#musiqueEnL">L</a> | <a href="#musiqueEnM">M</a> | <a href="#musiqueEnN">N</a> | <a
-            href="#musiqueEnO">O</a>
-        | <a href="#musiqueEnP">P</a> | <a href="#musiqueEnQ">Q</a> | <a href="#musiqueEnR">R</a> | <a
-            href="#musiqueEnS">S</a>
-        | <a href="#musiqueEnT">T</a> | <a href="#musiqueEnU">U</a> | <a href="#musiqueEnV">V</a> | <a
-            href="#musiqueEnW">W</a>
-        | <a href="#musiqueEnX">X</a> | <a href="#musiqueEnY">Y</a> | <a href="#musiqueEnZ">Z</a>
-        <br>
-        <hr style="width: 65%;"><br>
-        <table>
-            <tr>
-                <th>Titre</th>
-                <th>Artiste.s</th>
-                <th>Année</th>
-                <th>Durée</th>
-                <th>Poids</th>
-                <th>Lien</th>
-            </tr>
-            <tr>
-                <td><a href="./artistes/albums/nouAriv.html">Nou Ariv</a></td>
-                <td>Abdoul & DJ Sebb</td>
-                <td>2019</td>
-                <td>3'02</td>
-                <td>7 Mo</td>
-                <td><a
-                        href="http://files.polarbackup.com.s3.us-west-2.amazonaws.com/NewData/2524/6/7/EE1FFAEE4A460FA834EDF8D7020755?X-Amz-Expires=86400&response-content-disposition=attachment%3Bfilename%3D%2201.%2520Nou%2520ariv.mp3%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWWD4VNBS3SWK5LHB/20200412/us-west-2/s3/aws4_request&X-Amz-Date=20200412T171436Z&X-Amz-SignedHeaders=host&X-Amz-Signature=4c0246a3d3a7f1f33428747d28c2ba1db210a7455a99802a34f9e90bfe0c11f2"><img
-                            src="https://images2.imgbox.com/ac/7a/MXWZFPHx_o.png" width="15px"></a></td>
-            </tr>
-        </table>
-        <br><br>
-    </div>
-    <br>
-    <div id="musiqueEnZ">
-        <a href="#musiqueEnNum">#</a> | <a href="#musiqueEnA">A</a> | <a href="#musiqueEnB">B</a> | <a
-            href="#musiqueEnC">C</a>
-        | <a href="#musiqueEnD">D</a> | <a href="#musiqueEnE">E</a> | <a href="#musiqueEnF">F</a> | <a
-            href="#musiqueEnG">G</a>
-        | <a href="#musiqueEnH">H</a> | <a href="#musiqueEnI">I</a> | <a href="#musiqueEnJ">J</a> | <a
-            href="#musiqueEnK">K</a>
-        | <a href="#musiqueEnL">L</a> | <a href="#musiqueEnM">M</a> | <a href="#musiqueEnN">N</a> | <a
-            href="#musiqueEnO">O</a>
-        | <a href="#musiqueEnP">P</a> | <a href="#musiqueEnQ">Q</a> | <a href="#musiqueEnR">R</a> | <a
-            href="#musiqueEnS">S</a>
-        | <a href="#musiqueEnT">T</a> | <a href="#musiqueEnU">U</a> | <a href="#musiqueEnV">V</a> | <a
-            href="#musiqueEnW">W</a>
-        | <a href="#musiqueEnX">X</a> | <a href="#musiqueEnY">Y</a> | <a href="#musiqueEnZ">Z</a>
-        <br>
-        <hr style="width: 65%;"><br>
-        <table>
-            <tr>
-                <th>Titre</th>
-                <th>Artiste.s</th>
-                <th>Année</th>
-                <th>Durée</th>
-                <th>Poids</th>
-                <th>Lien</th>
-            </tr>
-            <tr>
-                <td><a href="./artistes/albums/zalouman.html">Zalouman</a></td>
-                <td>McBox, St Unit & VJ Awax</td>
-                <td>2019</td>
-                <td>2'44</td>
-                <td>7 Mo</td>
-                <td><a
-                        href="http://files.polarbackup.com.s3.us-west-2.amazonaws.com/NewData/2524/0/3/00D20F40FF4F0CADAA552BCF8C33DC?X-Amz-Expires=86400&response-content-disposition=attachment%3Bfilename%3D%2201.%2520Zalouman.mp3%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWWD4VNBS3SWK5LHB/20200412/us-west-2/s3/aws4_request&X-Amz-Date=20200412T212056Z&X-Amz-SignedHeaders=host&X-Amz-Signature=cf33497069051c5a2da74e5f8fadddafd35f41945b419d9484c7fd9d25e402f4"><img
-                            src="https://images2.imgbox.com/ac/7a/MXWZFPHx_o.png" width="15px"></a></td>
-            </tr>
-        </table>
-        <br><br>
-    </div>
-    <br>
-    <!-- END -->
-    <div>
-        <a href="#musiqueEnNum">#</a> | <a href="#musiqueEnA">A</a> | <a href="#musiqueEnB">B</a> | <a
-            href="#musiqueEnC">C</a>
-        | <a href="#musiqueEnD">D</a> | <a href="#musiqueEnE">E</a> | <a href="#musiqueEnF">F</a> | <a
-            href="#musiqueEnG">G</a>
-        | <a href="#musiqueEnH">H</a> | <a href="#musiqueEnI">I</a> | <a href="#musiqueEnJ">J</a> | <a
-            href="#musiqueEnK">K</a>
-        | <a href="#musiqueEnL">L</a> | <a href="#musiqueEnM">M</a> | <a href="#musiqueEnN">N</a> | <a
-            href="#musiqueEnO">O</a>
-        | <a href="#musiqueEnP">P</a> | <a href="#musiqueEnQ">Q</a> | <a href="#musiqueEnR">R</a> | <a
-            href="#musiqueEnS">S</a>
-        | <a href="#musiqueEnT">T</a> | <a href="#musiqueEnU">U</a> | <a href="#musiqueEnV">V</a> | <a
-            href="#musiqueEnW">W</a>
-        | <a href="#musiqueEnX">X</a> | <a href="#musiqueEnY">Y</a> | <a href="#musiqueEnZ">Z</a>
-        <br>
-        <hr style="width: 65%;"><br>
-        <p>&copy; Copyleft, 2020 | <a href="https://jeremspy.github.io/home" target="_blank">JeremSpy</a> | Tous droits
-            réservés.</p>
-        <br><br>
-    </div>
-    <img src="https://images2.imgbox.com/98/be/lzZk4fT6_o.png" width="175px"
-        style="border: 2px solid grey; border-radius: 15%;">
-    <br><br>
-    <br><br>
-
 </body>
 
 </html>

@@ -37,29 +37,24 @@
             background-color: #a5d7a7;
         }
 
-        @media (min-width:992px) {
-            .desktop-only {
-                display: block !important;
-            }
-
-            .mobile-only {
-                display: none !important;
-            }
+        .desktop-only {
+            display: block !important;
         }
 
-        @media (max-width: 991px) {
-            .mobile-only {
-                display: block !important;
-            }
-
-            .desktop-only {
-                display: none !important;
-            }
+        .mobile-only {
+            display: block !important;
         }
     </style>
 </head>
 
 <body>
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById("screenSize").className = "mobile-only";
+        } else {
+            document.getElementById("screenSize").className = "desktop-only"
+        }
+    </script>
     <br><br>
     <img src="https://images2.imgbox.com/44/f3/B6DONWzu_o.png" width="175px"
         style="border: 2px solid grey; border-radius: 15%;">
@@ -68,8 +63,8 @@
     <h1 style="font-family: cursive; border: 2px dotted #4caf50;"><br>Liste des musiques par ordre
         alphanumérique<br><br>
     </h1>
-    <p class="desktop-only">Paragraphe visible sur desktop</p>
-    <p class="mobile-only">Paragraphe visible sur mobile</p>
+    <p class="desktop-only" id="screenSize">Paragraphe visible sur desktop</p>
+    <p class="mobile-only" id="screenSize">Paragraphe visible sur mobile</p>
     <br>
     <div id="musiqueEnN">
         <a href="#musiqueEnNum">#</a> | <a href="#musiqueEnA">A</a> | <a href="#musiqueEnB">B</a> | <a
